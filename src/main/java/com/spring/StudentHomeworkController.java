@@ -3,6 +3,7 @@ package com.spring;
 
 import com.spring.core.StudentHomework;
 import com.spring.jdbc.StudentHomeworkJdbc;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -16,11 +17,12 @@ import java.util.List;
 @RequestMapping("/list")
 public class StudentHomeworkController {
 
+    @Autowired
+    StudentHomeworkJdbc studenthomework;
+
     @RequestMapping(method = RequestMethod.GET,value = "/student")
     public String student(HttpServletRequest request, HttpServletResponse response){
 
-
-        StudentHomeworkJdbc studenthomework=new StudentHomeworkJdbc();
         List<StudentHomework> list= studenthomework.selectAll();
         request.setAttribute("list",list);
 
@@ -32,7 +34,6 @@ public class StudentHomeworkController {
         request.setCharacterEncoding("utf-8");
 
         StudentHomework sh=new StudentHomework();
-        StudentHomeworkJdbc studenthomework=new StudentHomeworkJdbc();
         /**
          * 赋值
          **/

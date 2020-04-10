@@ -19,15 +19,16 @@ import java.util.List;
 @RequestMapping("/list")
 public class Student_HomeworkController {
 
+    @Autowired
+    StudentJdbc stu;
+
+    @Autowired
+    HomeworkJdbc homework;
 
     @RequestMapping(method = RequestMethod.GET,value = "/teacher")
     public String student(HttpServletRequest request, HttpServletResponse response){
 
-        StudentJdbc stu = new StudentJdbc();
         List<Student> list= stu.selectAll();
-
-
-        HomeworkJdbc homework=new HomeworkJdbc();
         List<Homework> list1= homework.selectAll();
         request.setAttribute("list",list);
         request.setAttribute("list",list1);
@@ -40,7 +41,6 @@ public class Student_HomeworkController {
         request.setCharacterEncoding("utf-8");
 
         Homework sh=new Homework();
-        HomeworkJdbc homework=new HomeworkJdbc();
         /**
          * 赋值
          **/
@@ -58,7 +58,6 @@ public class Student_HomeworkController {
         request.setCharacterEncoding("utf-8");
 
         Student sh=new Student();
-        StudentJdbc stu = new StudentJdbc();
         /**
          * 赋值
          **/
