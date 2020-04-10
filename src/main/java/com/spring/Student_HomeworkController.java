@@ -22,8 +22,13 @@ public class Student_HomeworkController {
 
     @RequestMapping(method = RequestMethod.GET,value = "/teacher")
     public String student(HttpServletRequest request, HttpServletResponse response){
-        List<Student> list= StudentJdbc.selectAll();
-        List<Homework> list1= HomeworkJdbc.selectAll();
+
+        StudentJdbc stu = new StudentJdbc();
+        List<Student> list= stu.selectAll();
+
+
+        HomeworkJdbc homework=new HomeworkJdbc();
+        List<Homework> list1= homework.selectAll();
         request.setAttribute("list",list);
         request.setAttribute("list",list1);
 
@@ -35,12 +40,13 @@ public class Student_HomeworkController {
         request.setCharacterEncoding("utf-8");
 
         Homework sh=new Homework();
+        HomeworkJdbc homework=new HomeworkJdbc();
         /**
          * 赋值
          **/
         sh.setHomeworkid(Integer.parseInt(request.getParameter("homeworkid")));
         sh.setHomeworktitle(request.getParameter("homeworktitle"));
-        HomeworkJdbc.add(sh);
+        homework.add(sh);
         //response.sendRedirect("list");
         System.out.println(Integer.parseInt(request.getParameter("homeworkid")));
 
@@ -52,13 +58,14 @@ public class Student_HomeworkController {
         request.setCharacterEncoding("utf-8");
 
         Student sh=new Student();
+        StudentJdbc stu = new StudentJdbc();
         /**
          * 赋值
          **/
 
         sh.setStuid(Integer.parseInt(request.getParameter("stuid")));
         sh.setStuname(request.getParameter("stuname"));
-        StudentJdbc.add(sh);
+        stu.add(sh);
         //response.sendRedirect("list");
         System.out.println(Integer.parseInt(request.getParameter("stuid")));
 

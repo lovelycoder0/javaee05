@@ -1,11 +1,12 @@
 package com.spring.core;
 
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
 
 import java.util.Date;
 
-@Component
+@Configuration
 public class StudentHomework {
     private int id;
     private int stuid;//学生id

@@ -3,17 +3,38 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!--Ioc：控制反转，利用反射原理，创建Student的实例对象-->
+    <!--Ioc：控制反转，利用反射原理，创建Student的实例对象
     <bean id="student" class="com.spring.core.Student">
         <property name="stuid">
             <value>19940067</value>
         </property>
+        <property name="stuname">
+            <value>许珍珍</value>
+        </property>
     </bean>
 
     <bean id="homework" class="com.spring.core.Homework">
+        <property name="homeworkid">
+            <value>6 </value>
+        </property>
+        <property name="homeworktitle">
+            <value>javaee06</value>
+        </property>
     </bean>
 
     <bean id="studenthomework" class="com.spring.core.StudentHomework">
+        <property name="stuid">
+            <value>19940067 </value>
+        </property>
+        <property name="homeworkid">
+            <value>6 </value>
+        </property>
+        <property name="homeworktitle">
+            <value>javaee06</value>
+        </property>
+        <property name="homeworkContent">
+            <value>https://github.com/lovelycoder0/javaee04.git</value>
+        </property>
     </bean>
-
+-->
 </beans>

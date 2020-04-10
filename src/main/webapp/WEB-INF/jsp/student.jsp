@@ -28,7 +28,9 @@
         </tr>
 
         <%
-            List<Homework> listh=(List<Homework>) HomeworkJdbc.selectAll();
+
+            HomeworkJdbc homework=new HomeworkJdbc();
+            List<Homework> listh=(List<Homework>) homework.selectAll();
             //List<StudentHomework> list=(List<StudentHomework>) request.getAttribute("list");
 
             if(null==listh||listh.size()<=0){
@@ -73,7 +75,8 @@
         </tr>
 
         <%
-            List<StudentHomework> list=(List<StudentHomework>) StudentHomeworkJdbc.selectAll();
+            StudentHomeworkJdbc studenthomework=new StudentHomeworkJdbc();
+            List<StudentHomework> list=(List<StudentHomework>) studenthomework.selectAll();
             //List<StudentHomework> list=(List<StudentHomework>) request.getAttribute("list");
 
             if(null==list||list.size()<=0){
@@ -125,7 +128,8 @@
         </tr>
 
         <%
-            List<Student> lists=(List<Student>) StudentJdbc.selectAll();
+            StudentJdbc stu=new StudentJdbc();
+            List<Student> lists=(List<Student>) stu.selectAll();
             //List<StudentHomework> list=(List<StudentHomework>) request.getAttribute("list");
 
             if(null==lists||lists.size()<=0){

@@ -1,15 +1,20 @@
 package com.spring.jdbc;
 
 import com.spring.core.StudentHomework;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Repository;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Repository(value = "studenthomeworkDao")
+@Configuration
 public class StudentHomeworkJdbc {
-    public static List<StudentHomework> selectAll() {
+
+    @Autowired
+    StudentHomework studenthomework;
+    public List<StudentHomework> selectAll() {
         //定义连接数据库
         Connection con= null;
         try {
@@ -58,7 +63,7 @@ public class StudentHomeworkJdbc {
         return list;
     }
 
-    public static void add(StudentHomework sh){
+    public void add(StudentHomework sh){
         //定义连接数据库
         Connection con= null;
         try {
@@ -92,7 +97,7 @@ public class StudentHomeworkJdbc {
 
     }
 
-   public static void main(String[] args) {
+   public void main(String[] args) {
         List<StudentHomework> list=selectAll();
         for (StudentHomework sh:list){
             System.out.println(sh.getHomeworkContent());
