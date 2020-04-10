@@ -2,10 +2,11 @@ package com.spring.core;
 
 import lombok.Data;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 
-@Configuration
+
 public class Homework {
     private int homeworkid;
     private String homeworktitle;

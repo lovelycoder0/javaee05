@@ -1,9 +1,10 @@
 package com.spring.core;
 
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-@Configuration
+
 public class Student {
 
     private int stuid;

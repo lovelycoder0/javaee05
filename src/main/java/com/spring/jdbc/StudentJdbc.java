@@ -13,8 +13,6 @@ import java.util.List;
 @Configuration
 public class StudentJdbc {
 
-    @Autowired
-    Student stu;
     public List<Student> selectAll() {
         //定义连接数据库
         Connection con= null;

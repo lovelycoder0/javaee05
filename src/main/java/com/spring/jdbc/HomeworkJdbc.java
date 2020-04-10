@@ -11,9 +11,6 @@ import java.util.List;
 @Configuration
 public class HomeworkJdbc {
 
-    @Autowired
-    Homework homework;
-
     public  List<Homework> selectAll() {
         //定义连接数据库
         Connection con= null;
